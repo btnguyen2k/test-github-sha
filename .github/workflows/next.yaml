@@ -1,0 +1,16 @@
+name: next
+
+on:
+  workflow_run:
+    workflows: ["github-sha"]
+    branches: [ '*' ]
+    types:
+      - completed
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get the commit SHA
+        run: echo ${{ github.sha }}
