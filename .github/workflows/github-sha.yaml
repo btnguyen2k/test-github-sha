@@ -1,4 +1,4 @@
-name: "gitub-sha"
+name: "github-sha"
 
 on:
   push:
