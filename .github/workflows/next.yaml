@@ -3,7 +3,7 @@ name: next
 on:
   workflow_run:
     workflows: ["github-sha"]
-    branches: [ '*' ]
+    branches: ['*']
     types:
       - completed
 
