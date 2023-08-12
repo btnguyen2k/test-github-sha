@@ -2,12 +2,21 @@ name: "gitub-sha"
 
 on:
   push:
-    branches: [ '*'] 
+    branches: [ '*' ]
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Get the commit SHA
+        run: echo ${{ github.sha }}
+      - name: Touch
+        run: |
+          echo `date` > touch
+          git config --global user.email "<>"
+          git config --global user.name "CI Build"
+          git commit -am "touch [skip ci]"
+          git push
       - name: Get the commit SHA
         run: echo ${{ github.sha }}
