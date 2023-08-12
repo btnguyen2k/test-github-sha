@@ -18,6 +18,7 @@ jobs:
           echo `date` > touch
           git config --global user.email "<>"
           git config --global user.name "CI Build"
+          git add .
           git commit -am "touch [skip ci]"
           git push
       - name: Get the commit SHA
