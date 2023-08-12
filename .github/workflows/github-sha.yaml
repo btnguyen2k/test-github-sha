@@ -2,8 +2,7 @@ name: "gitub-sha"
 
 on:
   push:
-    branches:
-      - master
+    branches: [ '*'] 
 
 jobs:
   test:
